@@ -11,6 +11,7 @@ public class UI_MainMenu : MonoBehaviour
     public void StartClicked()
     {
         SceneManager.LoadScene("Level1");
+        CursorManager.Instance.LockCursor();
         Debug.Log("Start Game");
     }
 

@@ -9,9 +9,6 @@ public class Timer : MonoBehaviour
 {
     [Header("Timer Settings")]
     [SerializeField] private float _time = 300f;
-    [SerializeField] protected float _timeRemaining;
-    [SerializeField] protected int _decimals;
-    [SerializeField] protected bool _isCountingDown;
 
     [Header("Unity Events Settings")]
     [SerializeField] private UnityEvent<float, float> _onTimerChanged;

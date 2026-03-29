@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 971373286094991422}
   - component: {fileID: 4352574382268645162}
   - component: {fileID: 3183718492038475170}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: Bar
   m_TagString: BlockDamage
   m_Icon: {fileID: 0}

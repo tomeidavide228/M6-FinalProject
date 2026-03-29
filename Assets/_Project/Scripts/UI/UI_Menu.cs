@@ -14,8 +14,7 @@ public class UI_Menu : MonoBehaviour
         gameObject.SetActive(false);
         Time.timeScale = 1f;
         MenuState.MenuClosed();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        CursorManager.Instance.LockCursor();
         Debug.Log("Continue Game");
     }
 
@@ -24,8 +23,7 @@ public class UI_Menu : MonoBehaviour
 
         Time.timeScale = 1f;
         MenuState.MenuClosed();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        CursorManager.Instance.LockCursor();
         Debug.Log("Restart Game");
         SceneManager.LoadScene("Level1");
     }

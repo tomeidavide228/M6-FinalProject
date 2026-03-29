@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerHead
   - Coin
+  - BlockDamage
   layers:
   - Default
   - TransparentFX
@@ -13,10 +14,10 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - Obstacle
+  - Coin
+  - DamageBlock
   - 
   - 
   - 

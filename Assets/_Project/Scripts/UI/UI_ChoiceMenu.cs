@@ -9,7 +9,6 @@ public class UI_ChoiceMenu : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
-        MenuState.MenuClosed();
         Debug.Log("Yes: Return to Main Menu");
     }
 
