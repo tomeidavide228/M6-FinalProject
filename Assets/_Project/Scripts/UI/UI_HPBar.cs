@@ -10,12 +10,6 @@ public class UI_HPBar : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _hpText;
     [SerializeField] private Image _fillableLifebar;
 
-    private LifeController _lifeController;
-
-    private void Start()
-    {
-        _lifeController = FindAnyObjectByType<LifeController>();
-    }
     public void UpdateGraphics(int currentHP, int maxHP)
     {
         _hpText.text = currentHP + "/" + maxHP;

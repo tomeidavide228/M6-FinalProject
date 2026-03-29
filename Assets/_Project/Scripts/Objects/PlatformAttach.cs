@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class PlatformAttach : MonoBehaviour
 {
-    [Header("Platform Settings")]
-    [SerializeField] GameObject _target;
-
-    private void Start()
-    {
-        if (_target == null)
-        {
-            _target = GameObject.FindWithTag("Player");
-        }
-    }
 
     private void OnTriggerEnter(Collider collided)
     {

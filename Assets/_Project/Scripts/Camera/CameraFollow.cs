@@ -19,7 +19,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (_target == null)
         {
-            _target = GameObject.FindWithTag("PlayerHead");
+            _target = GameObject.FindWithTag(Tags.PlayerHead);
         }
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

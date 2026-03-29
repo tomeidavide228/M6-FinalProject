@@ -11,10 +11,10 @@ public class RespawnZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider collided)
     {
-        if (collided.CompareTag("Player"))
+        if (collided.CompareTag(Tags.Player))
         {
             Rigidbody rb = collided.GetComponent<Rigidbody>();
-            _player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LifeController>();
+            _player = GameObject.FindGameObjectWithTag(Tags.Player).GetComponentInChildren<LifeController>();
             if (_player != null)
             {
                 _player.TakeDamage(10);

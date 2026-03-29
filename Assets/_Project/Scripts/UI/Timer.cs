@@ -9,28 +9,45 @@ public class Timer : MonoBehaviour
 {
     [Header("Timer Settings")]
     [SerializeField] private float _time = 300f;
+    [SerializeField] protected float _timeRemaining;
+    [SerializeField] protected int _decimals;
+    [SerializeField] protected bool _isCountingDown;
 
     [Header("Unity Events Settings")]
     [SerializeField] private UnityEvent<float, float> _onTimerChanged;
     [SerializeField] private UnityEvent _onTimerEnd;
 
-    void Update()
+    private int _lastDisplayedSeconds = -1;
+
+    private void Update()
     {
-        if (_time > 0)
-        {
-            _time -= Time.deltaTime;
-        }
-        else
+        if (_time <= 0)
         {
             _time = 0;
             _onTimerEnd.Invoke();
+            return;
         }
-        int minutes = Mathf.FloorToInt(_time / 60);
-        int seconds = Mathf.FloorToInt(_time % 60);
-        _onTimerChanged.Invoke(minutes, seconds);
+
+        _time -= Time.deltaTime;
+
+        UpdateDisplayedTime();
     }
+    private void UpdateDisplayedTime()
+    {
+        int totalSeconds = Mathf.Max(0, Mathf.FloorToInt(_time));
+        int minutes = totalSeconds / 60;
+        int seconds = totalSeconds % 60;
+
+        if (seconds != _lastDisplayedSeconds)
+        {
+            _lastDisplayedSeconds = seconds;
+            _onTimerChanged.Invoke(minutes, seconds);
+        }
+    }
+
     public void AddTime(float amount)
     {
         _time += amount;
+        UpdateDisplayedTime();
     }
 }

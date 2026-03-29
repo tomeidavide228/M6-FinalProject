@@ -14,9 +14,9 @@ public class TrapDamage : MonoBehaviour
     private void OnCollisionEnter(Collision collided)
     {
 
-        if (collided.gameObject.CompareTag("Player"))
+        if (collided.gameObject.CompareTag(Tags.Player))
         {
-            _player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LifeController>();
+            _player = GameObject.FindGameObjectWithTag(Tags.Player).GetComponentInChildren<LifeController>();
             if (_player != null)
             {
                 _player.TakeDamage(_damage);

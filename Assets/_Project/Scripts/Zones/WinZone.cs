@@ -10,7 +10,7 @@ public class WinZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider collided)
     {
-        if (collided.CompareTag("Player"))
+        if (collided.CompareTag(Tags.Player))
         {
             _onEnterWinZone.Invoke();
         }

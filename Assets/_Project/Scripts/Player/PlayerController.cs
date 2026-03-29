@@ -55,11 +55,7 @@ public class PlayerController : MonoBehaviour
         _h = Input.GetAxis("Horizontal");
         _v = Input.GetAxis("Vertical");
         _direction = new Vector3(_h, 0f, _v).normalized;
-        float sqrtLength = _direction.sqrMagnitude;
-        if (sqrtLength > 1)
-        {
-            _direction /= Mathf.Sqrt(sqrtLength);
-        }
+
         _moveDirection = Vector3.zero;
         _moveDirection.x = _direction.x;
         _moveDirection.z = _direction.z;
